@@ -11,3 +11,6 @@
 	branch = 0.8
 	path = lib/v3-core
 	url = https://github.com/Uniswap/v3-core
+[submodule "lib/omni"]
+	path = lib/omni
+	url = https://github.com/omni-network/omni.git
