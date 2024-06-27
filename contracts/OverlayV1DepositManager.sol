@@ -45,7 +45,7 @@ contract DepositManager is XApp, Ownable {
     /// @param tokenSymbol The symbol of the token being deposited at source chain
     function tokenCrossSwapDeposit(address owner, uint256 amount, address tokenAddress, string calldata tokenSymbol) external xrecv {
         require(isXCall(), "OVV1:!xcall");
-        require(msg.sender == address(omni.omniChainId()), "OVV1:!ov");
+        require(msg.sender == omni.omniChainId(), "OVV1:!ov");
         require(isSupportedChain(xmsg.sourceChainId), "OVV1:!chain");
         require(xmsg.sender == depositContractOn[xmsg.sourceChainId], "OVV1:!deposit");
         require(hasConversionRate(tokenSymbol), "OVV1:!tokenrate");
